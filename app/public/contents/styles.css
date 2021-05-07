@@ -1,0 +1,39 @@
+body * {
+    font-family: Ubuntu;
+    font-weight: bold;
+}
+
+.btn {
+    font-weight: bold;
+}
+
+#nav-signup-btn {
+    margin-right: 5px;
+}
+
+#nav-logout-btn {
+    margin-left: 5px;
+}
+
+.content-col {
+    padding-top: 100px;
+}
+
+#form {
+    width: 50%;
+    padding-top: 15px;
+}
+
+#form input {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+#forgot-password {
+    text-decoration: none;
+}
+
+#sample-video {
+    font-size: 20px;
+    text-decoration: none;
+}
