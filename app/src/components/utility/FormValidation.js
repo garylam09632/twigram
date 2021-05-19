@@ -53,7 +53,7 @@ function validateForm(event, state) {
         }
         else {
             document.getElementById("confirmPassword").setCustomValidity('Password not same');
-            state.errorMsg.confirmPassword = "Must be the same with the above password";
+            state.errorMsg.confirmPassword = "Must be the same with the password above";
             pwIsMatch = false;
         }
     }

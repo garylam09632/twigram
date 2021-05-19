@@ -65,8 +65,6 @@ class SignUp extends Component {
             console.log(signUpResponse);
             this.props.history.push("/welcome");
         } catch (error) {
-            error.message = "User already exists"
-            // Didn't use the cognito error message as it is not detail enough
             let err = null;
             !error.message ? err = { "message": error } : err = error;
             this.setState({
@@ -77,8 +75,11 @@ class SignUp extends Component {
             })
             console.log(error)
             if (error.message == "User already exists") {
-				document.getElementById("username").setCustomValidity('User already exists');
-			}
+                document.getElementById("username").setCustomValidity("Invalid username");
+            }
+            if (error.message == "Invalid email address format.") {
+                document.getElementById("email").setCustomValidity("Invalid email address format");
+            }
         }
 	};
 
@@ -101,19 +102,15 @@ class SignUp extends Component {
                             <form id="form" className="needs-validation" onSubmit={this.handleSubmit}  noValidate>
                             <div className="form-group">
                                 <div className="input-group mb-2">
-                                <div className="input-group-prepend">
-                                    <div className="input-group-text">
-                                        {/* User icon */}
-                                        <svg width="1em" height="1em" viewBox="0 0 16 16" className="bi bi-person" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                            <path fillRule="evenodd" d="M10 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6 5c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
-                                        </svg>
+                                    <div className="input-group-prepend">
+                                        <div className="input-group-text">
+                                            {/* User icon */}
+                                            <svg width="1em" height="1em" viewBox="0 0 16 16" className="bi bi-person" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                <path fillRule="evenodd" d="M10 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6 5c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+                                            </svg>
+                                        </div>
                                     </div>
-                                </div>
-                                <input type="text" id="username" className="form-control" placeholder="Username" onChange={this.onInputChange} required />
-                                <div className="valid-feedback"></div>
-                                <div className="invalid-feedback">
-                                    { this.state.errorMsg.username }
-                                </div>
+                                    <input type="text" id="username" className="form-control" placeholder="Username" onChange={this.onInputChange} required />
                                 </div>
                             </div>
                             <div className="form-group">
@@ -127,10 +124,6 @@ class SignUp extends Component {
                                     </div>
                                 </div>
                                 <input type="text" id="email" className="form-control" placeholder="Email" onChange={this.onInputChange} required />
-                                <div className="valid-feedback"></div>
-                                <div className="invalid-feedback">
-                                    { this.state.errorMsg.email }
-                                </div>
                                 </div>
                             </div>
                             <div className="form-group">

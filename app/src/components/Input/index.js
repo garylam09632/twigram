@@ -28,12 +28,7 @@ class CommentInput extends Component {
 	};
 
     comment = async () => {
-        // console.log(picture);
         var now = new Date().toLocaleString('en-US');
-        // let postID = HashCode(now + props.loggedInUser);
-        // let postDescription = document.getElementById("new-post-description").value;
-        // let newPhotoName = HashCode(now + picture[0].name);          
-        // let photoDataUrl = picture[1].split(',')[1];
         const params = {
             id: HashCode(now + this.props.postID.substr(0, 6)),
             username: this.props.username,

@@ -14,56 +14,6 @@ class Home extends Component {
         data: [],
         loading: true
     }
-        // data: []
-        // data: [
-        //     {
-        //         loggedInUser: "万策尽きた！",
-        //         data: {
-        //             username: "万策尽きた！",
-        //             image: "http://d12nxej3n1xwb5.cloudfront.net/photos/EzPthJRVEAcoBkr.jpg",
-        //             description: "YAGOO'S DREAM IS ALIVING",
-        //             comments: [{ username: "user-1", content: "Nenechi ECHI!!!!" }, 
-        //                         { username: "user-2", content: "Nene seal" }],
-        //             createdAt: "6 Days Ago"
-        //         }
-        //     },
-        //     {
-        //         loggedInUser: "万策尽きた！",
-        //         data: {
-        //             username: "Gary_X",
-        //             image: "http://d12nxej3n1xwb5.cloudfront.net/photos/EsqKHZwU0AEW_jB.jpg",
-        //             description: "Weird Nene FACE LMAO",
-        //             comments: [{ username: "user-1", content: "Nenechi ECHI" }, 
-        //                         { username: "user-2", content: "Nene seal" }, 
-        //                         { username: "user-3", content: "Husband zoned" }],
-        //             createdAt: "2 Days Ago"
-        //         }
-        //     },
-        //     {
-        //         loggedInUser: "万策尽きた！",
-        //         data: {
-        //             username: "Yukimin",
-        //             image: "http://d12nxej3n1xwb5.cloudfront.net/photos/Ep6StcHVgAAhFVo.jpg",
-        //             description: "Weird Nene FACE LMAO",
-        //             comments: [{ username: "user-1", content: "Nenechi ECHI" }, 
-        //                         { username: "user-2", content: "Nene seal" }, 
-        //                         { username: "user-3", content: "Husband zoned" }],
-        //             createdAt: "3 Days Ago"
-        //         }
-        //     },
-        //     {
-        //         loggedInUser: "万策尽きた！",
-        //         data: {
-        //             username: "万策尽きた！",
-        //             image: "http://d12nxej3n1xwb5.cloudfront.net/photos/Esf37_IVkAE8SH5.jpg",
-        //             description: "Smart NENE",
-        //             comments: [{ username: "user-1", content: "Nenechi ECHI" }, 
-        //                         { username: "user-2", content: "Nene seal" }, 
-        //                         { username: "user-3", content: "Husband zoned" }],
-        //             createdAt: "4 Days Ago"
-        //         }
-        //     }
-        // ]
 
     constructor(props) {
         super(props);
@@ -113,35 +63,6 @@ class Home extends Component {
     }
 
     render() {
-        // const rows = [];
-        // for (var i=0; i<this.state.data.length; i++) {
-        //     if (i%2 == 0) {
-        //         if (i + 1 > this.state.data.length - 1) {
-        //             rows.push(
-        //                 <div className="row element">
-        //                     <div className="col-md-2"></div>
-        //                     <div className="col-md-8">
-        //                         <Post marginRight={"me-3"} data={this.state.data[i]} />
-        //                     </div>
-        //                     <div className="col-md-2"></div>
-        //                 </div>
-        //             )
-        //         }
-        //         else {
-        //             rows.push(
-        //                 <div className="row element">
-        //                     <div className="col-md-2"></div>
-        //                     <div className="col-md-8">
-        //                         <Post marginRight={"me-3"} loggedInUser={this.state.username} data={this.state.data[i]} />
-        //                         <Post loggedInUser={this.state.username} data={this.state.data[i+1]} />
-        //                     </div>
-        //                     <div className="col-md-2"></div>
-        //                 </div>
-        //             )
-        //         }
-        //     }
-        // }
-
         const posts = this.state.data.map((post) =>
             <Post loggedInUser={this.state.username} data={post} showLoader={this.showLoader} />
         );
@@ -166,13 +87,6 @@ class Home extends Component {
                                     No posts were uploaded yet...
                                 </p> :
                                 <CardColumns className="text-center">
-                                    {/* <Post data={this.state.data[0]} />
-                                    <Post data={this.state.data[1]} />
-                                    <Post data={this.state.data[2]} />
-                                    <Post data={this.state.data[2]} />
-                                    <Post data={this.state.data[0]} />
-                                    <Post data={this.state.data[3]} />
-                                    <Post data={this.state.data[1]} /> */} 
                                     { posts } 
                                 </CardColumns>   
                         }

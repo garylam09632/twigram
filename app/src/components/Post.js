@@ -19,21 +19,6 @@ class Post extends Component {
         }
     }
 
-    componentDidMount() {
-        // this.setState({
-        //     loggedInUser: "万策尽きた！",
-        //     username: "万策尽きた！",
-        //     imageName: "EzPthJRVEAcoBkr.jpg",
-        //     description: "Weird Nene FACE LMAO",
-        //     comments: [{ username: "user-1", content: "Nenechi ECHI" }, 
-        //                 { username: "user-2", content: "Nene seal" }, 
-        //                 { username: "user-2", content: "Nene seal" },
-        //                 { username: "user-2", content: "Nene seal" },
-        //                 { username: "user-2", content: "Nene seal" }],
-        //     createdAt: "6 Days Ago",
-        // })
-    }
-
     getCommentColor(comment) {
         if (comment.description != undefined) {
             if (this.state.loggedInUser != comment.username)
@@ -116,25 +101,6 @@ class Post extends Component {
         );
 
         return (
-            // <Card>
-            //     <Row className="post-row">
-            //         <Col className="post-img" md={5}>
-            //             <Card.Img  src={ Lamy} />
-            //         </Col>
-            //         <Col className="post-content" md={7}>
-            //             <div className="post-comments">
-            //                 <Card.Body>
-            //                     { description }
-            //                     { comments }
-            //                 </Card.Body>
-            //             </div>
-            //             <CommentInput />    
-            //         </Col>
-            //     </Row>
-            //     <Card.Footer>
-            //         <small className="text-muted">{ this.state.createdAt }</small>
-            //     </Card.Footer>
-            // </Card>
             <Card id={ this.state.data.id }>
                 <Card.Img src={ config.cloudfront.invokeUrl + this.state.data.photoID } />
                 <Accordion defaultActiveKey="0">
@@ -167,7 +133,6 @@ class Post extends Component {
                     <small className="text-muted">{ this.state.data.createdAt }</small>
                 </Card.Footer>
             </Card>
-            // <img src={Lamy} />
         )
     }
 }
