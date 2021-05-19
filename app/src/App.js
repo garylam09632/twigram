@@ -13,7 +13,7 @@ class App extends Component {
 		this.state = {
 			loggedInUser: "",
 			isLoggedIn: false,
-		}
+		};
 	}
 
 	componentDidMount() {
@@ -49,9 +49,9 @@ class App extends Component {
 							<Route exact path="/home" component={Home} />
 						</Switch>
 					</Fragment>
-				  </Router>
+				</Router>
 			</div>
-		  );
+		);
 	}
 }
 

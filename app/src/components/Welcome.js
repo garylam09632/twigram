@@ -6,7 +6,7 @@ export default function Welcome() {
             <div className="row">
                 <div className="col-md-2"></div>
 			    <div className="col-md-10 content-col">
-                    <div className="container-fluid">
+                    <div className="container-fluid" style={{color: "white"}}>
                         <h1>Welcome!</h1>
                         <br />
                         <p>You have successfully registered a new account.</p>
