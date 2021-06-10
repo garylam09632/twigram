@@ -11,7 +11,6 @@ class Post extends Component {
 
     constructor(props) {
         super(props);
-        console.log(props)
         this.state = {
             loggedInUser: props.loggedInUser,
             data: props.data,
@@ -70,6 +69,7 @@ class Post extends Component {
                     floatRight={ this.commentIsFloatRight(params) } />
             ]
         })
+        document.getElementById(this.state.data.id).getElementsByTagName('input')[0].value = "";
     }
 
     deletePost = async () => {

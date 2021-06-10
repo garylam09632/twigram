@@ -40,6 +40,7 @@ class Home extends Component {
         try {
             const res = await axios.get(`${ config.api.invokeUrl }/posts`);
             console.log(res.data.Items);
+            console.log(config);
             this.setState({
                 data: res.data.Items
             })

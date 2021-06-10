@@ -58,7 +58,6 @@ class Login extends Component {
 					username: user.username
 				}
 			});
-			
 			console.log(user)
         } catch (error) {
             // Didn't use the cognito error message as it is not detail enough
@@ -128,9 +127,6 @@ class Login extends Component {
 												{ this.state.errorMsg.password }
 											</div>
 										</div>
-									</div>
-									<div className="form-group">
-										<a id="forgot-password" href="#"> Forgot password?</a>
 									</div>
 									<div className="form-group">
 										<button id="login-btn" type="submit" className="btn btn-success">Login</button>

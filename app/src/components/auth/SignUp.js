@@ -139,9 +139,9 @@ class SignUp extends Component {
                                 </div>
                                 <input type="password" id="password" className="form-control" data-html="true"
                                         placeholder="Password (Hover to see constraints)" onChange={this.onInputChange} 
-                                        data-toggle="tooltip" title="Password constraints:<br />
-                                               1) Minimum of 8 characters<br />
-                                               2) At least one uppercase and lowercase character<br />
+                                        data-toggle="tooltip" title="Password constraints:
+                                               1) Minimum of 8 characters
+                                               2) At least one uppercase and lowercase character
                                                3) Must contains number" required />
                                 <div className="valid-feedback"></div>
                                 <div className="invalid-feedback">

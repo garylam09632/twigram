@@ -1,8 +1,8 @@
 {
     "cognito" : {
         "REGION": "ap-southeast-2",
-        "USER_POOL_ID": "ap-southeast-2_VzOb5Rt5z",
-        "APP_CLIENT_ID": "2gts6kfs8adu20dmqgs79d5lm5"
+        "USER_POOL_ID": "ap-southeast-2_KeBoViRDy",
+        "APP_CLIENT_ID": "3bgm9kjsrak4luhhv4p04e02pj"
     },
     "cloudfront" : {
         "invokeUrl": "http://d12nxej3n1xwb5.cloudfront.net/photos/"
